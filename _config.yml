@@ -23,7 +23,8 @@ sass:
   sass_dir:     _sass
   style:        compressed
 
-theme:          jekyll-whiteglass
+#theme:          jekyll-whiteglass
+remote_theme:    yous/whiteglass
 
 # Gems
 plugins:
