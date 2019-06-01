@@ -53,3 +53,5 @@ jekyll-archives:
 # Excludes
 exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
 
+
+theme: jekyll-theme-cayman
