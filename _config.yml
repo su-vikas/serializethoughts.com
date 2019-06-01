@@ -1,0 +1,54 @@
+# Site settings
+title:          serializethoughts
+description:    "Serializing thought objects!"
+baseurl:        ""
+url:            "https://su-vikas.github.io"
+
+# Google Analytics
+#google_analytics: UA—XXXXXXXX-X
+
+# Author
+author:       Vikas Gupta
+url:          https://serializethoughts.com
+email:        vikasgupta.nit@gmail.com
+lang:         en
+
+# Build settings
+markdown:       kramdown
+include:
+  - _pages
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
+
+theme:          jekyll-whiteglass
+
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-archives
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5
+paginate_path: /posts/:num/
+
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: category_archives
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+# Excludes
+exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
+
