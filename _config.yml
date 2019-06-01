@@ -23,8 +23,8 @@ sass:
   sass_dir:     _sass
   style:        compressed
 
-theme:          jeykell-theme-cayman
-#remote_theme:    yous/whiteglass
+#theme:          jeykell-theme-cayman
+remote_theme:    yous/whiteglass
 
 # Gems
 plugins:
