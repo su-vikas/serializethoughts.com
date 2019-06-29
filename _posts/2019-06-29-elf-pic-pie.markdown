@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Differentiate ELF executable from shared library"
+title:  "Differentiate an ELF executable from a shared library"
 date:   2019-06-29 16:17:22 +0800
 ---
 Time To Read: 5 min
