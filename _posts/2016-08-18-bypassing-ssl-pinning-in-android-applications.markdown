@@ -1,17 +1,17 @@
 ---
 layout: post
 title:  "Bypassing SSL Pinning in Android Applications"
-date:   2016-09-10 16:17:22 +0800
+date:   2016-08-18 16:17:22 +0800
 ---
 
 It is a common practice for Android and iOS applications' developers to implement SSL Pinning in order to make reverse engineering of the apps difficult. As per [OWASP](https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning), SSL Pinning can be defined as the process of associating a host (in this case the app), with their expected X509 certificate or public key. Applications communicating over HTTPS and using SSL Pinning makes it non-trivial to perform Man-In-The-Middle attack and grab the network traffic in clear text using the proxy tools. For further reading about SSL Pinning, I would recommend [OWASP article](https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning) to get started with.
 
 In this post, I will be looking into the steps involved in bypassing SSL Pinning checks for an Android application and show how we can patch the application binaries in order to intercept the traffic. For this post I am using Facebook Messenger (FBM) application as an example.
 
-#SSL Pinning In Android
+# SSL Pinning In Android
 SSL Pinning in case of Android can be performed either in the Java layer, using the Android API, or in the native C/C++ layer. Lets look into each of the cases one at a time:
 
-##Java Layer
+## Java Layer
 
 To implement SSL Pinning, Android API exposes multiple functions to do so.  Android developer [website](https://developer.android.com/training/articles/security-ssl.html) provides a good overview about the topic.  In order to bypass the SSL Pinning in Java layer one can use existing tools or can patch the APK file manually.
 
@@ -25,7 +25,7 @@ To implement SSL Pinning, Android API exposes multiple functions to do so.  Andr
 
 The above approach is discussed in detail in this [blog post](http://blog.dewhurstsecurity.com/2015/11/10/mobile-security-certificate-pining.htm). Hence, I will refrain from duplicating the information and recommend you to read it there.
 
-##Native Layer
+## Native Layer
 
 Now enters a bit more challenging part. If the above approaches fail, you can fairly be confident that the SSL Pinning checks are being performed in the native layer. FBM is doing exactly same. To make things a bit obscure, the FBM application do have SSL Pinning logic in Java layer as well, but patching it does not work.
 
