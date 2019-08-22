@@ -31,25 +31,25 @@ Now enters a bit more challenging part. If the above approaches fail, you can fa
 
 To get started, simply run APKTool and get the decompiled/unzipped version of the APK. If you look in the lib folder, there are 6 native libraries.
 
-![FB Libraries](../assets/images/fb_libs.png)
+![FB Libraries](/assets/images/fb_libs.png)
 
 After exploring these libraries using IDA Pro, to my surprise, none was having network related code. Which entailed more research is required to find the relevant code. If you look into these existing native libraries, you will find there is logic for xz decoding and logic for loading more native libraries. Also, if you go on and install the application and after the first usage, you will find that the */data/data/com.facebook.orca* directory have a folder *lib-xzs*, which contains another 30+ libraries.
 
-![libliger](../assets/images/libliger.png)
+![libliger](/assets/images/libliger.png)
 
 So now the work is cut out clearly, we have to look into these libraries to find the network code. After evaluating each library using IDAPro, the code for SSL Pinning was found in libliger-native.so. There are many functions corresponding to SSL Pinning and network in this library. On seeing the various functions,  proxygen::SSLVerification::verifyWithMetrics() seems to be an easy target to fix. The function performs a comparison of the certificate received against the desired certificate embedded/pinned in the application and returns true or false. The pseudocode is shown below:
 
-![VerifywithMetrics](../assets/images/verifywithmetrics1.jpg)
+![VerifywithMetrics](/assets/images/verifywithmetrics1.jpg)
 
 - **Dynamic Patching**: Dynamic library can be patched by performing dynamic injection and patching the function during the runtime. [ADBI](https://github.com/crmulliner/adbi) and [FRIDA](https://frida.re) are the two frameworks that provide such functionality. After some fiddling around with the above mentioned tools,  in both the cases FBM was crashing whenever an injection is made. Whether it was a security defense mechanism or instability of the process post injection, I left this unexplored for the time being. A note to the readers, to use these framework you need a rooted device.
 
 - **Native Library Patching**: Given the dynamic injection is causing frequent crashes, patching the binary manually and reloading it again seems to be the only other option to go with. I used IDAPro to patch the binary. At the offset  0x0006732E patch code from 0xB948 (CBNZ R0, loc_6744) to 0xB9B8 (CBNZ R0, loc_6760). Where the block at loc_6760 is responsible for setting the return value, variable 'result', to always true. To get more understanding how the ARMv7 instructions represented at the bit level, read this [answer](http://stackoverflow.com/questions/9279451/armv7-word-patch-cbnz). After patching, replace the libliger-native.so file in /data/data/com.facebook.orca/lib-xzs with the new one, restart the application and now you can intercept the traffic.
 
 Before patching library looks like following: 
-![before_patching](../assets/images/before_patching.jpg)
+![before_patching](/assets/images/before_patching.jpg)
 
 After patching: 
-![After Patching](../assets/images/patched.jpg)
+![After Patching](/assets/images/patched.jpg)
 
 Recently, there was another [blog post](https://eaton-works.com/2016/07/31/reverse-engineering-and-removing-pokemon-gos-certificate-pinning/) discussing patching of Android application (Pokemon Go app) to bypass SSL Pinning and I would recommend to read that one as well. The approach taken in that post is slightly different, as each application has different implementation.
 
