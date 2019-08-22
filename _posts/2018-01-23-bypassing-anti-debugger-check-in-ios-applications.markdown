@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Differentiate an ELF executable from a shared library"
-date:   2019-06-29 16:17:22 +0800
+title:  "Bypassing anti-debugger check in iOS Applications"
+date:   2018-01-23 16:17:22 +0800
 ---
 
 **Expected Reading Time**: 5 Mins
