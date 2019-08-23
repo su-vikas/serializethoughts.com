@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Linux Thread is a Standard Process"
-date:   2016-78-16 16:17:22 +0800
+date:   2016-07-16 16:17:22 +0800
 ---
 
 As per [Wikipedia](https://en.wikipedia.org/wiki/Thread_(computing)), a computing thread is defined as "the smallest sequence of programmed instructions that can be managed independently by a scheduler". And further goes on to say, the implementation of threads and processes differs between operating systems, but in most cases a thread is a component of a process. A process can have multiple threads within a shared memory address space of the process.  In this article, I won't be going into the nitty-gritty of threads. There are many good resources available on the Internet discussing various details of threads. Rather I would like to focus on an important aspect of threads specifically in Linux kernel.
