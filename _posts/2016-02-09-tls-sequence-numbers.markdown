@@ -15,12 +15,12 @@ The question arises, if sequence number for a connection is maintained, and give
 From RFC 6101 states following about how sequence number should be calculated and also what data type should be used. Note that by using int64, chances of overflow are minimized.
 
 ```
-    Each party maintains separate sequence numbers for transmitted and received messages for each connection.  When a party sends or receives a change cipher spec message, the appropriate sequence number is set to zero.  Sequence numbers are of type uint64 and may not exceed 2^64-1.
-    ```
+Each party maintains separate sequence numbers for transmitted and received messages for each connection. When a party sends or receives a change cipher spec message, the appropriate sequence number is set to zero.  Sequence numbers are of type uint64 and may not exceed 2^64-1.
+```
 
 To summarize, the sequence number provides protection against attempts to delete or reorder messages.
 
 ## References:
-[1] https://tools.ietf.org/html/rfc6101#page-14
-[2] https://security.stackexchange.com/questions/55667/tls-sequence-number#
-[3] SSL and TLS Theory and practice by Rolf Oppliger
+1. https://tools.ietf.org/html/rfc6101#page-14
+2. https://security.stackexchange.com/questions/55667/tls-sequence-number#
+3. SSL and TLS Theory and practice by Rolf Oppliger
