@@ -6,7 +6,7 @@ date:   2016-04-15 16:17:22 +0800
 
 In this post I will discuss about a very interesting piece of Android Operating System. If you have worked with Android, you might have run the *ps* command and might have observed that all applications have same parent PID (PPID). Android takes an unconventional approach to spawn processes, which ensure application startup is snappy. The process from which all the Android applications are derived is called Zygote. So in the screenshot below, all the applications have PPID of 1914, which is the PID of Zygote. In the rest of the post, I will talk about what is the need of Zygote, how does it come into existence and some discussion about Zygote in general.
 
-~[android_zygote](/assets/images/android_zygote.png)
+![android_zygote](/assets/images/android_zygote.png)
 
 # Need of Zygote?
 
