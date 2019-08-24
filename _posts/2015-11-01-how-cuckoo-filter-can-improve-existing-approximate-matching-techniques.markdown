@@ -23,7 +23,7 @@ In one of my recent works, I have used Cuckoo filter instead of Bloom filter in 
 - Size of final fingerprints generated is halved.
 - Memory usage is 8th of approach with Bloom filter.
 
-This work was presented at [ICDF2C-2015](http://d-forensics.org/), which took place on 6th October in Seoul, South Korea, titled (How Cuckoo Filter Can Improve Existing Approximate Matching Techniques)[http://link.springer.com/chapter/10.1007/978-3-319-25512-5_4#page-1] ([pdf](/assets/docs/icdf2c.pdf)). The work was adjudged with best paper award by the committee.
+This work was presented at [ICDF2C-2015](http://d-forensics.org/), which took place on 6th October in Seoul, South Korea, titled [How Cuckoo Filter Can Improve Existing Approximate Matching Techniques](http://link.springer.com/chapter/10.1007/978-3-319-25512-5_4#page-1) ([pdf](/assets/docs/icdf2c.pdf)). The work was adjudged with best paper award by the committee.
 
 In next coming posts I will try to cover what are approximate matching algorithms in detail and probably also look into each of these algorithms.
 
