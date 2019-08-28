@@ -2,7 +2,7 @@
 title:          serializethoughts
 description:    "Serializing thought objects!"
 baseurl:        ""
-url:            "https://su-vikas.github.io"
+url:            "https://serializethoughts.com"
 
 # Google Analytics
 google_analytics: UA-146596695-1
@@ -36,7 +36,7 @@ plugins:
   # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
-permalink:      /:year/:month/:day/:title
+permalink:      /:year/:month/:day/:title/
 paginate:       20
 paginate_path: /posts/:num/
 
