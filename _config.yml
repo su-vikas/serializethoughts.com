@@ -5,7 +5,7 @@ baseurl:        ""
 url:            "https://su-vikas.github.io"
 
 # Google Analytics
-#google_analytics: UA—XXXXXXXX-X
+google_analytics: UA-146596695-1
 
 # Author
 author:       Vikas Gupta
