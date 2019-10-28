@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Revisiting RageAgainstTheCage"
-date:   2019-10-20 16:17:22 +0800
+title:  "RageAgainstTheCage - Revisting Android adb setuid Exhaustion Attack"
+date:   2019-10-28 16:17:22 +0800
 ---
 
 **Time To Read:** 5 min
