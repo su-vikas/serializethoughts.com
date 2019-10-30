@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Solving UnCrackable 1 iOS crackme Without Using an iOS Device"
+title:  "Solving iOS UnCrackable 1 Crackme Without Using an iOS Device"
 date:   2019-10-28 16:17:22 +0800
 ---
-**TL;DR:** UnCrackable Level 1 iOS crackme application can be solved without using an iOS device using Angr's dynamic execution engine.  
+**TL;DR:** iOS UnCrackable Level 1 crackme application can be solved without using an iOS device using Angr's dynamic execution engine.  
 
 **Time To Read:** 5 min
 
