@@ -13,7 +13,7 @@ To perform static analysis, multiple tools are available - Ghidra, R2 or IDA Pro
 
 The application gives a message "Verification Failed" when a wrong input is provided to it. 
 
-![Verification Failed Message](/assets/images/owasp_mstg_angr_ghidra_buttonclick_decompiled.png "Verification Failed Message")
+![Verification Failed Message](/assets/images/owasp_mstg_angr_ios_app_wrong_input.png "Verification Failed Message")
 
 On searching the binary for this string, it is found in `buttonClick` function. The message is displayed after a comparison operation using `isEqualToString`. The comparison is being performed between the input string and the value of a label marked as *hidden*. 
 
