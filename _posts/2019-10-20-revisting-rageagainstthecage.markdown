@@ -4,9 +4,9 @@ title:  "RageAgainstTheCage - Revisting Android adb setuid Exhaustion Attack"
 date:   2019-10-28 16:17:22 +0800
 ---
 
-**Time To Read:** 5 min
-
 **TL;DR:** *adb setuid exhaustion attack* (aka RageAgainstTheCage) was present in Android 1.6 to 2.2. During *adb* initialisation, while dropping its privileges there is no check for *setuid* syscall's return value. This can be exploited by causing a race condition by creating RLIMIT_NPROC processes and killing *adb*, on *adb* restart *setuid* syscall might fail and can lead to *adb* continue running with root privileges. 
+
+**Time To Read:** 5 min
 
 In 2010 Sebastian Krahmer discovered a vulnerability in the implementation of *adb* for Android 1.6 to 2.2 versions. The vulnerability is - *adb* fails to check *setuid* return code and this can be caused to fail by a shell user already having RLIMIT_NPROC processes. The vulnerability in itself is very simple, unlike many other vulnerabilities which require various memory gymnastics to exploit. Apart from the simplicity, the vulnerability gives us a good insight into some of the Linux kernel working and also a good lesson for the developers.  
 
