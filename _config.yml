@@ -4,9 +4,6 @@ description:    "Serializing thought objects!"
 baseurl:        ""
 url:            "https://serializethoughts.com"
 
-# Google Analytics
-google_analytics: UA-146596695-1
-
 # Author
 author:       Vikas Gupta
 url:          https://serializethoughts.com
