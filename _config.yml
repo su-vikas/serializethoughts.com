@@ -21,8 +21,7 @@ sass:
   style:        compressed
 
 #theme:          jeykell-theme-cayman
-# remote_theme:    yous/whiteglass
-remote_theme:   fongandrew/hydeout 
+remote_theme:    yous/whiteglass
 
 
 # Gems
