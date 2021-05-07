@@ -21,7 +21,9 @@ sass:
   style:        compressed
 
 #theme:          jeykell-theme-cayman
-remote_theme:    yous/whiteglass
+# remote_theme:    yous/whiteglass
+remote_theme:   fongandrew/hydeout 
+
 
 # Gems
 plugins:
@@ -49,6 +51,3 @@ jekyll-archives:
 
 # Excludes
 exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
-
-
-theme: jekyll-theme-cayman
