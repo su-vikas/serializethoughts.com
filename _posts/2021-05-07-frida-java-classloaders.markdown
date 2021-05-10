@@ -22,7 +22,7 @@ Often malwares and obfuscation tools change the default behaviour of class loadi
 FRIDA will throw error while trying to hook a class not loaded using the default classloader. To this problem, FIRDA provides a easy solution via [`Java.enumerateClassLoaders()`](https://frida.re/docs/javascript-api/#java) API. You can iterate over the classloaders and use them by using `Java.ClassFactory.get(loader)` API. Once the new loader is set, the `.use()` API can be used to get the desired class and hook it.
 
 
-```JS
+```js
 Java.enumerateClassLoaders({
         onMatch: function(loader){
             Java.classFactory.loader = loader;
